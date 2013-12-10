@@ -29,6 +29,7 @@
             <td>${event.eventTime}</td>
             <td>${event.result}</td>
             <td>${event.active}</td>
+            <td><a href="./bets?eventId=${event.id}">View bets</a></td>
         </tr>
     </c:forEach>
     </tbody>

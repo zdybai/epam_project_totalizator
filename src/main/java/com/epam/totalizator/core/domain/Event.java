@@ -8,7 +8,7 @@ import java.util.List;
 public class Event {
 
     public String name;
-    public final int id;
+    public int id;
 
     public Date startBetTime, endBetTime, eventTime;
 

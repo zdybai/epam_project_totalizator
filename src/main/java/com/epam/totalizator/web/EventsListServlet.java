@@ -11,8 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-/**
- * Created with IntelliJ IDEA.
+/** * Created with IntelliJ IDEA.
  * User: Zdybai
  * Date: 09.12.13
  * Time: 21:35
@@ -24,7 +23,7 @@ public class EventsListServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         DBManager manager = new DBManager();
-        req.setAttribute("events", manager.GetEvents());
+        req.setAttribute("events", manager.getEvents());
         req.getRequestDispatcher("/WEB-INF/views/eventsList.jsp").forward(req, resp);
     }
 }
