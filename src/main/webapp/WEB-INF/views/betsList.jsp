@@ -6,7 +6,9 @@
     <link rel="stylesheet" type="text/css" href="resources/styles.css"/>
 </head>
 <body>
-<table>
+        <p align=right>User:"${currentUser.login}"   Cash = "${currentUser.cash}"
+        <a href="./logout" align=right>Log out</a>
+<table align=center>
     <caption>Bets</caption>
     <thead>
     <tr>

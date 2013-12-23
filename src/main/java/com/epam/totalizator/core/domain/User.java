@@ -25,4 +25,8 @@ public class User {
     public int getCash() {
         return cash;
     }
+
+    public int getId() {
+        return id;
+    }
 }

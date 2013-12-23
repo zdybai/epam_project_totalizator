@@ -27,9 +27,15 @@ public class DBManager {
             Boolean result = Boolean.parseBoolean(obj.get("result").toString());
             events.add(new Event(id, name, endBetTime, eventTime, result));
         }*/
-        events.add(new Event(1, "Name1", new Date(), new Date(), true));
-        events.add(new Event(2, "Name2", new Date(), new Date(), true));
-        events.add(new Event(3, "Name3", new Date(), new Date(), true));
+        events.add(new Event(1, 1, "Name1", new Date(), new Date(), true));
+        events.add(new Event(2, 2, "Name2", new Date(), new Date(), true));
+        events.add(new Event(3, 1, "Name3", new Date(), new Date(), true));
+        return events;
+    }
+
+    public ArrayList<Event> getEvents(int userId) {
+        ArrayList<Event> events = new ArrayList<Event>();
+        events.add(new Event(2, 2, "Name2", new Date(), new Date(), true));
         return events;
     }
 
@@ -55,7 +61,7 @@ public class DBManager {
 
     public User login(String login, String password) {
         //return null;
-        return new User("user", 100, 1);
+        return new User("user", 100, 2);
     }
 
     public User register(String login, String password) {

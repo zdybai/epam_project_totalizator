@@ -8,15 +8,16 @@ import java.util.List;
 public class Event {
 
     public String name;
-    public int id;
+    public int id, ownerId;
 
     public Date startBetTime, endBetTime, eventTime;
 
     public boolean result;
     public boolean active;
 
-    public Event(int id, String name, Date endBetTime, Date eventTime, boolean result){
+    public Event(int id, int ownerId, String name, Date endBetTime, Date eventTime, boolean result){
         this.id = id;
+        this.ownerId = ownerId;
         this.name = name;
         this.endBetTime = endBetTime;
         this.eventTime = eventTime;

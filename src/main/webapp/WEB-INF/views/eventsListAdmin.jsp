@@ -23,6 +23,7 @@
         <th>Result</th>
         <th>Is Active</th>
         <th>Bets</th>
+        <th>Calculate</th>
     </tr>
     </thead>
     <tbody>
@@ -36,6 +37,7 @@
             <td>${event.result}</td>
             <td>${event.active}</td>
             <td><a href="./bets?eventId=${event.id}">View bets</a></td>
+            <td><a href="./calculate?eventId=${event.id}">Calculate money fo event</a></td>
         </tr>
     </c:forEach>
     </tbody>

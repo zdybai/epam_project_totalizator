@@ -2,6 +2,7 @@ package com.epam.totalizator.web;
 
 
 import com.epam.totalizator.core.DBManager;
+import com.epam.totalizator.core.domain.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,9 +25,15 @@ public class EventsListServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         DBManager manager = new DBManager();
+        String paramUserId = req.getParameter("userId");
         HttpSession session = req.getSession();
-        req.setAttribute("currentUser", session.getAttribute("currentSessionUser"));
-        req.setAttribute("events", manager.getEvents());
-        req.getRequestDispatcher("/WEB-INF/views/eventsList.jsp").forward(req, resp);
+        User user = (User) session.getAttribute("currentSessionUser");
+        req.setAttribute("currentUser", user);
+        req.setAttribute("events", (paramUserId == null) ? manager.getEvents() :
+                manager.getEvents(Integer.parseInt(paramUserId)));
+        if(user.getId() != 1)
+            req.getRequestDispatcher("/WEB-INF/views/eventsList.jsp").forward(req, resp);
+        else
+            req.getRequestDispatcher("/WEB-INF/views/eventsListAdmin.jsp").forward(req, resp);
     }
 }
