@@ -52,4 +52,14 @@ public class DBManager {
 
         return bets;
     }
+
+    public User login(String login, String password) {
+        //return null;
+        return new User("user", 100, 1);
+    }
+
+    public User register(String login, String password) {
+        //return null;
+        return new User("user", 100, 1);
+    }
 }

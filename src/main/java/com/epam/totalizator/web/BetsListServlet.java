@@ -24,7 +24,6 @@ public class BetsListServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws UnknownHostException, ServletException, IOException {
         DBManager manager = new DBManager();
-        Enumeration<String> params = req.getParameterNames();
         String paramEventId = req.getParameter("eventId");
         int eventId = Integer.parseInt(paramEventId);
         req.setAttribute("bets", manager.getBets(eventId));

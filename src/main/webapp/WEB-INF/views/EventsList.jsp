@@ -6,7 +6,9 @@
     <link rel="stylesheet" type="text/css" href="resources/styles.css"/>
 </head>
 <body>
-<table>
+        <p align=right>User:"${currentUser.login}"   Cash = "${currentUser.cash}"
+        <a href="./logout" align=right>Log out</a>
+<table align=center>
     <caption>Events</caption>
     <thead>
     <tr>
@@ -17,6 +19,7 @@
         <th>Event Time</th>
         <th>Result</th>
         <th>Is Active</th>
+        <th>Bets</th>
     </tr>
     </thead>
     <tbody>
