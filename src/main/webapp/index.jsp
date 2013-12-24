@@ -5,8 +5,8 @@
   </head>
   <body><center>
       <form action="./login" method="GET">
-          Логін:  <input type="text" name="login"/><br/>
-          Пароль: <input type="password" name="password"/><br/>
+          Логін:  <input type="text" name="un"/><br/>
+          Пароль: <input type="password" name="pw"/><br/>
           <input type="submit" value="Увійти">
       </form>
       <a href="./registerPage.jsp">Реєстрація</a>

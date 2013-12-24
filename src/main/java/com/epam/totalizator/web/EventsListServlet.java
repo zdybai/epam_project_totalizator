@@ -30,7 +30,7 @@ public class EventsListServlet extends HttpServlet {
         User user = (User) session.getAttribute("currentSessionUser");
         req.setAttribute("currentUser", user);
         req.setAttribute("events", (paramUserId == null) ? manager.getEvents() :
-                manager.getEvents(Integer.parseInt(paramUserId)));
+                manager.getEventsById(Integer.parseInt(paramUserId)));
         if(user.getId() != 1)
             req.getRequestDispatcher("/WEB-INF/views/eventsList.jsp").forward(req, resp);
         else

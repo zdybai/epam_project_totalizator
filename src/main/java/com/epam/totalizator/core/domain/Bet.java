@@ -1,5 +1,7 @@
 package com.epam.totalizator.core.domain;
 
+import com.mongodb.BasicDBObject;
+
 public class Bet {
 
     int betId, ownerId, eventId;
@@ -31,5 +33,15 @@ public class Bet {
 
     public boolean getStatus() {
         return status;
+    }
+
+    public BasicDBObject getDBObject(){
+        BasicDBObject object = new BasicDBObject();
+        object.put("betId", betId);
+        object.put("ownerId", ownerId);
+        object.put("eventId", eventId);
+        object.put("amount", amount);
+        object.put("status", status);
+        return object;
     }
 }
