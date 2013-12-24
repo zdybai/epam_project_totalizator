@@ -29,6 +29,7 @@ public class BetsListServlet extends HttpServlet {
         String paramEventId = req.getParameter("eventId");
         int eventId = Integer.parseInt(paramEventId);
         HttpSession session = req.getSession();
+        session.setAttribute("currentEventId", eventId);
         User user = (User) session.getAttribute("currentSessionUser");
         req.setAttribute("currentUser", user);
         req.setAttribute("bets", manager.getBets(eventId));

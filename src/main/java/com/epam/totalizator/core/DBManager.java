@@ -49,9 +49,9 @@ public class DBManager {
 
             //int id = Integer.parseInt(obj.get("betId").toString());
             int eventId1 = (int) Double.parseDouble(obj.get("eventId").toString());
-            int userId = (int) Double.parseDouble(obj.get("userId").toString());
+            int userId = (int) Double.parseDouble(obj.get("ownerId").toString());
             int amount = (int) Double.parseDouble(obj.get("amount").toString());
-            boolean result = Boolean.parseBoolean(obj.get("userId").toString());
+            boolean result = Boolean.parseBoolean(obj.get("status").toString());
 
             bets.add(new Bet(1, userId, eventId1, amount, result));
         }
@@ -117,9 +117,11 @@ public class DBManager {
         return events;
     }
 
-    public void createBet(int betId, int ownerId, int eventId, int amount, boolean status){
+    public Bet createBet(int ownerId, int eventId, int amount, boolean status){
+        int betId = 0;
         Bet bet = new Bet(betId, ownerId, eventId, amount, status);
         db.getCollection("bets").insert(bet.getDBObject())  ;
+        return bet;
     }
 
     public User login(String login, String pass){

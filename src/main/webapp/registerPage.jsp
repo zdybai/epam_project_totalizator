@@ -12,7 +12,7 @@
 		<title>Register Page</title>
 	</head>
 
-	<body>
+	<body><center>
 		<form action="./register">
 
 			Please enter your username

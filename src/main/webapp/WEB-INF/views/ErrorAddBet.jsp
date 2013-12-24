@@ -12,6 +12,6 @@
 		<title>Error</title>
 	</head>
     <body>
-        <h1>Error</h1>
+        <h1>Add Bet Error</h1>
     </body>
 </html>

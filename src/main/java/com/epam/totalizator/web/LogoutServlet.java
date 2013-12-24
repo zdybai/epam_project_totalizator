@@ -19,6 +19,7 @@ public class LogoutServlet extends HttpServlet {
 
         HttpSession session = req.getSession(true);
         session.removeAttribute("currentSessionUser");
+        session.removeAttribute("currentEventId");
         req.getRequestDispatcher("./").forward(req, resp);
     }
 }

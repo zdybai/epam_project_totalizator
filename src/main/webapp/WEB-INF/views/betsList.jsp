@@ -31,5 +31,7 @@
     </c:forEach>
     </tbody>
 </table>
+<button align=center onclick="location.href='./addBet.jsp'">
+     Add Bet</button>
 </body>
 </html>
